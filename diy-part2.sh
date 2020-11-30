@@ -35,9 +35,9 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' ./package/lean/default-settings/files/z
 
 
 # 删除默认argon主题，并下载新argon主题
-#git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-#git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
-rm -rf ./package/lean/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+rm -rf package/lean/luci-theme-argon
 
 # Modify default IP
 sed -i 's/192.168.1.1/10.10.10.89/g' package/base-files/files/bin/config_generate
