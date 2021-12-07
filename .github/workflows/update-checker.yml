@@ -47,7 +47,7 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         #token: ${{ secrets.ACTIONS_TRIGGER_PAT }}
-        token: ${{ secrets.ABC123 }}ABC123
+        token: ${{ secrets.ABC123 }}
         event-type: Source Code Update
 
     - name: Delete workflow runs
