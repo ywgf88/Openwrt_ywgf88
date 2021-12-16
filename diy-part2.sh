@@ -45,6 +45,9 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon-18.06/g' feeds/luci/collections/
 # Modify default IP
 sed -i 's/192.168.1.1/10.10.10.89/g' package/base-files/files/bin/config_generate
 
+# Temporary repair https://github.com/coolsnowwolf/lede/issues/8423
+sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
+
 # 替换https-dns-proxy.init文件,解决用LEDE源码加入passwall编译固件后DNS转发127.0.0.1#5053和12.0.0.1#5054问题
 #curl -fsSL  https://raw.githubusercontent.com/Lienol/openwrt-packages/19.07/net/https-dns-proxy/files/https-dns-proxy.init > feeds/packages/net/https-dns-proxy/files/https-dns-proxy.init
 
@@ -56,9 +59,9 @@ sed -i 's/192.168.1.1/10.10.10.89/g' package/base-files/files/bin/config_generat
 #cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 #add luci-app-dockerman
-rm -rf ../lean/luci-app-docker
+#rm -rf ../lean/luci-app-docker
 #git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 #git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
-git clone https://github.com/lisaac/luci-in-docker.git package/luci-in-docker
-git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
+#git clone https://github.com/lisaac/luci-in-docker.git package/luci-in-docker
+#git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
