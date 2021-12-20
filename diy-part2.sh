@@ -12,6 +12,8 @@
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+#openwrt-mos
+git clone https://github.com/QiuSimons/openwrt-mos package/lean/luci-app-mosdns
 
 
 # Modify hostname
